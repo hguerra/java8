@@ -20,10 +20,13 @@ public class Capitulo8 {
 		 */
 		List<Usuario> filtradosOrdenados = usuarios.stream().filter(u -> u.getPontos() > 100)
 				.sorted(Comparator.comparing(Usuario::getNome)).collect(Collectors.toList());
+		
+		filtradosOrdenados.forEach(System.out::println);
 
 		/**
 		 * Analisando com peek
 		 */
 		usuarios.stream().filter(u -> u.getPontos() > 100).peek(System.out::println).findAny();
+	
 	}
 }
